@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informações do livro</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-container img {
+            display: block;
+            margin: 0 auto 20px auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .main-container h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .main-container p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: #0f172a;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #334155;
+        }
+
+        thead th {
+            padding: 12px;
+            text-align: left;
+            font-size: 13px;
+            color: #cbd5f5;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #334155;
+            transition: background 0.2s;
+        }
+
+        tbody tr:hover {
+            background: #273449;
+        }
+
+        td {
+            padding: 10px;
+            font-size: 14px;
+        }
+        .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin: 30px;
+                margin-left: 44%;
+                padding: 7px 12px;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 500;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+        .btn.voltar {
+            background: rgba(168, 85, 247, 0.15);
+            color: #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            }
+
+        .btn.voltar:hover {
+            background: #a855f7;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+<h1>Informações do livro</h1>
+<div class="main-container">
+    <h2 th:text="${livro.nome}"></h2>
+    <p><strong>Disponibilidade: </strong> <span th:text="${livro.disponivel}"></span></p>
+    <p><strong>Data de Emprestimo: </strong> <span th:text="${livro.dataEmprestimo}"></span></p>
+    <p><strong>Data de Devolução: </strong> <span th:text="${livro.dataDevolucao}"></span></p>
+    <p><strong>Sinopse:</strong></p>
+    <span th:text="${livro.descricao}"></span>
+</div>
+<a class="btn voltar" href="/livros/ui/listar">Voltar para a lista de livros</a>
+
+</body>
+</html>
