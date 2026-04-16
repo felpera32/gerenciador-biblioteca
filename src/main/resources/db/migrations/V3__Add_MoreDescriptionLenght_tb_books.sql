@@ -1,0 +1,2 @@
+ALTER TABLE tb_books
+ALTER COLUMN descricao CLOB;

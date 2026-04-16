@@ -18,6 +18,7 @@ public class BookItem {
     private String nome;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
+    @Lob
     private String descricao;
     private String autor;
     private String editora;

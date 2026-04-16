@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -246,6 +246,7 @@
         <td th:text="${livros.autor}"></td>
 
         <td class="acoes">
+            <a class="btn edit" th:href="@{/livros/ui/editar/{id}(id=${livros.id})}">Editar</a>
             <a class="btn view" th:href="@{/livros/ui/listar/{id}(id=${livros.id})}">Ver detalhes</a>
             <a class="btn delete" th:href="@{/livros/ui/deletar/{id}(id=${livros.id})}">Deletar</a>
         </td>

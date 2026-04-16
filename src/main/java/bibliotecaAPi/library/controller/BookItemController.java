@@ -42,4 +42,6 @@ public class BookItemController {
     public void removerLivro(@PathVariable Long id){
         service.removerLivro(id);
     }
+
+
 }

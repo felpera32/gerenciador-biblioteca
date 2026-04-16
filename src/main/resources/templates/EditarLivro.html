@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Informações do livro</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #0f172a;
+                color: #e2e8f0;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1 {
+                text-align: center;
+                margin: 40px 0 20px;
+            }
+
+            .main-container {
+                max-width: 500px;
+                margin: 0 auto;
+                background: #1e293b;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            label {
+                margin-top: 12px;
+                font-size: 14px;
+            }
+
+            input {
+                margin-top: 5px;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid #334155;
+                background: #0f172a;
+                color: #e2e8f0;
+                outline: none;
+                transition: 0.2s;
+            }
+
+            input:focus {
+                border-color: #a855f7;
+                box-shadow: 0 0 5px rgba(168, 85, 247, 0.5);
+            }
+
+            button {
+                margin-top: 20px;
+                padding: 10px;
+                border-radius: 8px;
+                border: none;
+                background: #a855f7;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            button:hover {
+                background: #9333ea;
+                transform: translateY(-1px);
+            }
+
+            .btn {
+                display: block;
+                width: fit-content;
+                margin: 20px auto;
+                padding: 8px 14px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 13px;
+                transition: 0.2s;
+            }
+
+            .btn.voltar {
+                background: rgba(168, 85, 247, 0.15);
+                color: #a855f7;
+                border: 1px solid rgba(168, 85, 247, 0.4);
+            }
+
+            .btn.voltar:hover {
+                background: #a855f7;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Editar livro</h1>
+        <div class="main-container">
+            <form th:action="@{/livros/ui/atualizar/{id}(id=${livro.id})}"
+                  th:object="${livro}"
+                  method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" th:field="*{nome}" required />
+
+                <label for="link">URL da Imagem:</label>
+                <input type="text" id="link" th:field="*{link}" required />
+
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" th:field="*{descricao}" required />
+
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" th:field="*{autor}" required />
+
+                <label for="editora">Editora:</label>
+                <input type="text" id="editora" th:field="*{editora}" />
+
+                <button type="submit">Editar livro</button>
+            </form>
+        </div>
+        <a class="btn voltar" href="/livros/ui/listar">Voltar para a lista de livros</a>
+
+    </body>
+
+    </html>
+</body>
+
+</html>
