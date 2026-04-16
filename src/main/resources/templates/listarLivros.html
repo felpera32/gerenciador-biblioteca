@@ -241,7 +241,7 @@
     <tr th:each = "livros: ${livros}">
         <td th:text="${livros.id}"></td>
         <td th:text="${livros.nome}"></td>
-        <td th:text="${livros.disponivel}"></td>
+        <td th:text="${livros.disponivel ? 'Disponivel' : 'Indisponivel'}"></td>
         <td th:text="${livros.editora}"></td>
         <td th:text="${livros.autor}"></td>
 

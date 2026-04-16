@@ -1,0 +1,2 @@
+ALTER TABLE tb_books
+ADD COLUMN link VARCHAR(255);

@@ -21,6 +21,7 @@ public class BookItem {
     private String descricao;
     private String autor;
     private String editora;
+    private String link;
     private boolean disponivel;
 
 
@@ -78,6 +79,14 @@ public class BookItem {
 
     public void setEditora(String editora) {
         this.editora = editora;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public boolean isDisponivel() {

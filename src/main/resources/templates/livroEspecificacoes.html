@@ -32,6 +32,8 @@
             margin: 0 auto 20px auto;
             border-radius: 10px;
             object-fit: cover;
+            width: 25%;
+            height: 5%;
         }
 
         .main-container h2 {
@@ -109,8 +111,9 @@
 <body>
 <h1>Informações do livro</h1>
 <div class="main-container">
+    <img th:src="${livro.link}" width="100" height="100">
     <h2 th:text="${livro.nome}"></h2>
-    <p><strong>Disponibilidade: </strong> <span th:text="${livro.disponivel}"></span></p>
+    <p><strong>Disponibilidade: </strong> <span th:text="${livro.disponivel ? 'Disponivel' : 'Indisponivel'}"></span></p>
     <p><strong>Data de Emprestimo: </strong> <span th:text="${livro.dataEmprestimo}"></span></p>
     <p><strong>Data de Devolução: </strong> <span th:text="${livro.dataDevolucao}"></span></p>
     <p><strong>Sinopse:</strong></p>
