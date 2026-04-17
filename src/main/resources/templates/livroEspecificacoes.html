@@ -5,107 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Informações do livro</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
+          font-family: 'Segoe UI', sans-serif;
+          background: #f8f9fa;
+          color: #1a1a1a;
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         h1 {
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            font-size: 28px;
+          font-size: 22px;
+          font-weight: 500;
+          margin-bottom: 1.5rem;
+          color: #111827;
         }
 
         .main-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+          width: 100%;
+          max-width: 600px;
+          background: #fff;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          padding: 1.75rem;
         }
 
         .main-container img {
-            display: block;
-            margin: 0 auto 20px auto;
-            border-radius: 10px;
-            object-fit: cover;
-            width: 25%;
-            height: 5%;
+          display: block;
+          margin: 0 auto 1.25rem;
+          border-radius: 8px;
+          object-fit: cover;
+          width: 120px;
+          height: 160px;
+          border: 1px solid #e5e7eb;
         }
 
         .main-container h2 {
-            text-align: center;
-            margin-bottom: 15px;
+          text-align: center;
+          font-size: 18px;
+          font-weight: 500;
+          color: #111827;
+          margin-bottom: 1rem;
         }
 
         .main-container p {
-            margin: 8px 0;
-            font-size: 15px;
+          font-size: 14px;
+          color: #374151;
+          margin: 8px 0;
+          padding: 8px 12px;
+          background: #f9fafb;
+          border-radius: 6px;
+          border: 1px solid #f3f4f6;
+          line-height: 1.5;
+        }
+
+        .main-container p strong {
+          color: #6b7280;
+          font-weight: 500;
+          font-size: 12px;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          margin-right: 6px;
+        }
+
+        .main-container span {
+          font-size: 14px;
+          color: #374151;
+          line-height: 1.7;
+          display: block;
+          margin-top: 8px;
         }
 
         table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-            background: #0f172a;
-            border-radius: 8px;
-            overflow: hidden;
+          width: 100%;
+          margin-top: 1.25rem;
+          border-collapse: collapse;
+          background: #f9fafb;
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid #e5e7eb;
         }
 
         thead {
-            background: #334155;
+          background: #f3f4f6;
         }
 
         thead th {
-            padding: 12px;
-            text-align: left;
-            font-size: 13px;
-            color: #cbd5f5;
+          padding: 10px 14px;
+          text-align: left;
+          font-size: 12px;
+          font-weight: 500;
+          color: #6b7280;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
         }
 
         tbody tr {
-            border-bottom: 1px solid #334155;
-            transition: background 0.2s;
+          border-bottom: 1px solid #e5e7eb;
+          transition: background 0.15s;
         }
 
-        tbody tr:hover {
-            background: #273449;
-        }
+        tbody tr:last-child { border-bottom: none; }
+
+        tbody tr:hover { background: #f3f4f6; }
 
         td {
-            padding: 10px;
-            font-size: 14px;
+          padding: 10px 14px;
+          font-size: 14px;
+          color: #111827;
         }
+
         .btn {
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                margin: 30px;
-                margin-left: 44%;
-                padding: 7px 12px;
-                border-radius: 8px;
-                font-size: 13px;
-                font-weight: 500;
-                text-decoration: none;
-                cursor: pointer;
-                transition: all 0.2s ease;
-            }
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          margin: 1.25rem auto 0;
+          padding: 7px 14px;
+          border-radius: 8px;
+          font-size: 13px;
+          font-weight: 500;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
         .btn.voltar {
-            background: rgba(168, 85, 247, 0.15);
-            color: #a855f7;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            }
+          color: #6b7280;
+          border: none;
+          background: none;
+        }
 
         .btn.voltar:hover {
-            background: #a855f7;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+          color: #374151;
+          text-decoration: underline;
         }
-
     </style>
 </head>
 <body>
