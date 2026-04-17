@@ -73,9 +73,21 @@ public class BookItemControllerUI {
 
 
     @PostMapping("/atualizar/{id}")
-    public String AtualizarLivro(@PathVariable Long id, @ModelAttribute BookItem livros,  RedirectAttributes redirectAttributes){
-        service.Atualizar(id, livros);
+    public String AtualizarLivro(@PathVariable Long id, @ModelAttribute BookItem book, @RequestParam String devol,  RedirectAttributes redirectAttributes){
+        if("emprestar".equals(devol)){
+            book.setDisponivel(false);
+        }
+        else if("devolver".equals(devol)){
+            book.setDisponivel(true);
+        }
+
+        repo.save(book);
+        service.Atualizar(id, book);
         redirectAttributes.addFlashAttribute("mensagem", "O livro atualizado com sucesso");
+
+
         return "redirect:/livros/ui/listar";
     }
+
+
 }

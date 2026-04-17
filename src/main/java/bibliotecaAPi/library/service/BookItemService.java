@@ -45,9 +45,11 @@ public class BookItemService {
         book.setDescricao(bookItem.getDescricao());
         book.setAutor(bookItem.getAutor());
         book.setEditora(bookItem.getEditora());
+        book.setDataEmprestimo(bookItem.getDataEmprestimo());
+        book.setDataDevolucao(bookItem.getDataDevolucao());
         book.setLink(bookItem.getLink());
         book.setEditora(bookItem.getEditora());
-
+        book.setDisponivel(bookItem.isDisponivel());
         return service.save(book);
     }
 

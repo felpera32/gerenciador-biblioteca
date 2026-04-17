@@ -43,5 +43,4 @@ public class BookItemController {
         service.removerLivro(id);
     }
 
-
 }

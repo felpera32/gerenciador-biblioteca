@@ -2,154 +2,184 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <!DOCTYPE html>
+  <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Informações do livro</title>
-        <style>
-            * { margin: 0; padding: 0; box-sizing: border-box; }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informações do livro</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-            body {
-              font-family: 'Segoe UI', sans-serif;
-              background: #f8f9fa;
-              color: #1a1a1a;
-              padding: 2rem;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-            }
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f8f9fa;
+        color: #1a1a1a;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-            h1 {
-              font-size: 22px;
-              font-weight: 500;
-              margin-bottom: 1.25rem;
-              color: #111827;
-              align-self: flex-start;
-              max-width: 480px;
-              width: 100%;
-            }
+      h1 {
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+        color: #111827;
+        align-self: flex-start;
+        max-width: 480px;
+        width: 100%;
+      }
 
-            .main-container {
-              width: 100%;
-              max-width: 480px;
-              background: #fff;
-              border: 1px solid #e5e7eb;
-              border-radius: 12px;
-              padding: 1.5rem;
-            }
+      .main-container {
+        width: 100%;
+        max-width: 480px;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1.5rem;
+      }
 
-            form {
-              display: flex;
-              flex-direction: column;
-            }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
 
-            label {
-              font-size: 12px;
-              font-weight: 500;
-              color: #6b7280;
-              margin-top: 1rem;
-              margin-bottom: 6px;
-            }
+      label {
+        font-size: 12px;
+        font-weight: 500;
+        color: #6b7280;
+        margin-top: 1rem;
+        margin-bottom: 6px;
+      }
 
-            label:first-child { margin-top: 0; }
+      label:first-child {
+        margin-top: 0;
+      }
 
-            input {
-              padding: 8px 12px;
-              border-radius: 8px;
-              border: 1px solid #e5e7eb;
-              background: #f9fafb;
-              color: #111827;
-              font-size: 14px;
-              font-family: inherit;
-              transition: border-color 0.15s, box-shadow 0.15s;
-            }
+      input {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        background: #f9fafb;
+        color: #111827;
+        font-size: 14px;
+        font-family: inherit;
+        transition: border-color 0.15s, box-shadow 0.15s;
+      }
 
-            input:focus {
-              outline: none;
-              border-color: #93c5fd;
-              box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.3);
-              background: #fff;
-            }
+      input:focus {
+        outline: none;
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.3);
+        background: #fff;
+      }
 
-            input::placeholder { color: #9ca3af; }
+      input::placeholder {
+        color: #9ca3af;
+      }
 
-            button {
-              margin-top: 1.25rem;
-              padding: 9px;
-              border-radius: 8px;
-              border: 1px solid #bbf7d0;
-              background: #dcfce7;
-              color: #15803d;
-              font-size: 14px;
-              font-weight: 500;
-              cursor: pointer;
-              font-family: inherit;
-              transition: background 0.15s;
-            }
+      button {
+        margin-top: 1.25rem;
+        padding: 9px;
+        border-radius: 8px;
+        border: 1px solid #bbf7d0;
+        background: #dcfce7;
+        color: #15803d;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.15s;
+      }
 
-            button:hover { background: #bbf7d0; }
-            button:active { transform: scale(0.98); }
+      button:hover {
+        background: #bbf7d0;
+        color: black;
+      }
 
-            .btn {
-              display: block;
-              width: fit-content;
-              margin: 1rem auto 0;
-              padding: 7px 14px;
-              border-radius: 8px;
-              font-size: 13px;
-              text-decoration: none;
-              transition: color 0.15s;
-            }
+      button:active {
+        transform: scale(0.98);
+      }
 
-            .btn.voltar {
-              color: #6b7280;
-            }
+      .btn {
+        display: block;
+        width: fit-content;
+        margin: 1rem auto 0;
+        padding: 7px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        text-decoration: none;
+        transition: color 0.15s;
+      }
 
-            .btn.voltar:hover {
-              color: #374151;
-              text-decoration: underline;
-            }
-        </style>
-    </head>
+      button:disabled {
+        background-color: #CE2626;
+        color: white;
+        cursor: not-allowed;
+      }
 
-    <body>
-        <h1>Editar livro</h1>
-        <div class="main-container">
-            <form th:action="@{/livros/ui/atualizar/{id}(id=${livro.id})}"
-                  th:object="${livro}"
-                  method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" th:field="*{nome}" required />
 
-                <label for="link">URL da Imagem:</label>
-                <input type="text" id="link" th:field="*{link}" required />
 
-                <label for="descricao">Descrição:</label>
-                <input type="text" id="descricao" th:field="*{descricao}" required />
+      .btn.voltar {
+        color: #6b7280;
+      }
 
-                <label for="autor">Autor:</label>
-                <input type="text" id="autor" th:field="*{autor}" required />
+      .btn.voltar:hover {
+        color: #374151;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
 
-                <label for="editora">Editora:</label>
-                <input type="text" id="editora" th:field="*{editora}" />
+  <body>
+    <h1>Editar livro</h1>
+    <div class="main-container">
+      <form th:action="@{/livros/ui/atualizar/{id}(id=${livro.id})}" th:object="${livro}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" th:field="*{nome}" required />
 
-                <button type="submit">Editar livro</button>
-            </form>
-        </div>
-        <a class="btn voltar" href="/livros/ui/listar">Voltar para a lista de livros</a>
+        <label for="link">URL da Imagem:</label>
+        <input type="text" id="link" th:field="*{link}" required />
 
-    </body>
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" th:field="*{descricao}" required />
 
-    </html>
-</body>
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" th:field="*{autor}" required />
 
-</html>
+        <label for="editora">Editora:</label>
+        <input type="text" id="editora" th:field="*{editora}" />
+
+        <label for="dataEmprestimo">Data Emprestimo</label>
+        <input type="date" name="dataEmprestimo" id="dataEmprestimo" required>
+
+        <label for="dataDevolucao">Data Devolução</label>
+        <input type="date" name="dataDevolucao" id="dataDevolucao">
+
+        <button type="submit" name="devol" value="devolver" th:classappend="${livro.disponivel} ? 'btn-disabled'"
+          th:disabled="${livro.disponivel}">Devolver</button>
+        <button type="submit" name="devol" value="emprestar" th:classappend="${!livro.disponivel} ? 'btn-disabled'"
+          th:disabled="${!livro.disponivel}">emprestar</button>
+
+        <button type="submit">Confirmar</button>
+      </form>
+    </div>
+    <a class="btn voltar" href="/livros/ui/listar">Voltar para a lista de livros</a>
+
+  </body>
+  <script>
+      document.getElementById('dataEmprestimo').value = new Date().toISOString().substring(0, 10);
+  </script>
+  </html>
